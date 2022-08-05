@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&family=Poppins:wght@200;300;400&display=swap');
+
+/*================Root Styling================*/
+
+:root{
+ --header-bg : hsla(0, 24%, 93%, 1);
+ --input-bg : hsla(0, 100%, 99%, 1);
+ --text-color : hsla(0, 0%, 0%, 1);
+ --bg-color : hsla(0, 40%, 83%, 1);
+ --container-bg : hsla(0, 72%, 95%, 1);
+ --repo-text : hsla(227, 57%, 52%, 1);
+ --para-color :hsla(0, 12%, 54%, 1);
+ --divider-color: hsla(0, 54%, 85%, 1);
+ --white-color: #fff;
+ --username :hsl(0deg 38% 73%);
+
+ --h2-size : 1.3rem;
+ --para-size:0.9rem;
+}
+
+/*================Basic Styling================*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-size: 16px;
+	background-color: var(--bg-color);
+	font-family: 'Inter', sans-serif;
+	margin-bottom: 3rem;
+}
+input,
+button{
+	border: none;
+	outline: none;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+a{
+	text-decoration: none;
+}
+/*================Not Found User ================*/
+.notFound{
+	display: none;
+	width: 100%;
+    margin: 5rem auto;
+    font-size:2rem;
+	text-align: center;
+	color: var(--para-color);
+}
+#wrapper{
+	display: none;
+}
+.container{
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+}
+/*================Header Section================*/
+
+.nav_wrapper{
+	align-items: center;
+	background-color: var(--header-bg);
+	height: 29vw;
+	font-size: 18px;
+}
+.nav_container{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.nav_content{
+	display: flex;
+	align-items: center;
+	font-size: 2.5rem;
+}
+.nav_logo{
+  font-size: 8rem;
+  padding-right: 1rem;
+}
+.nav_searchbar{
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 40px;
+}
+.searchBar{
+  width: 94%;
+  height: 8rem;
+  background-color: var(--input-bg);
+  border-radius: 40px;
+  font-size: 2.5rem;
+  padding-left: 3rem;
+}
+.searchBtn{
+	width: 125px;
+	height: 120px;
+	border-radius: 50%;
+	margin-right: 2rem;
+	font-size: 3.5rem;
+	background-color: var(--header-bg);
+	color: black;
+}
+.searchBtn:hover{
+	background-color: black;
+	color: var(--white-color);
+}
+
+/*================User Section================*/
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+}
+.left_wrapper{
+	width: 100%;
+}
+.user_container{
+	margin: 1rem 1rem;
+	background-color: var(--container-bg);
+	border-radius: 20px;
+}
+.user_area{
+	padding: 3rem 1rem;
+	width: 100%;
+	display: flex;
+	color: var(--text-color);
+}
+.user_img img{
+	width: 280px;
+	height: 280px;
+	border-radius: 50%;
+}
+.user_content{
+	padding-left: 2rem;
+	font-size: 20px;
+}
+.user_name,.username{
+	font-size: 3rem;
+    color: var(--text-color);
+}
+.user_bio{
+	color: var(--para-color);
+	font-size: 1.5rem
+}
+.user_data{
+	display: flex;
+    font-size: 2.3rem;
+    align-items: center;
+    padding: 2rem 0;
+}
+.user_following{
+	padding-left: 2rem;
+}
+
+/*================Repo Section================*/
+
+.repo_container{
+	margin: 1rem 1rem;
+	padding:3rem 1rem;
+	background-color: var(--container-bg);
+	border-radius: 20px;
+}
+.repo_title{
+	font-size: 4rem;
+	padding-bottom: 2rem;
+	color: var(--text-color);
+}
+.repo_name{
+	text-transform: capitalize;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+.repo_desc{
+	font-size: 0.8rem;
+    color: var(--para-color);
+    margin: 1rem 0;
+}
+.repo_day{
+	display: flex;
+    justify-content: end;
+    font-size: 1.8rem;
+}
+.divider{
+    width: 98%;
+    height: 0px;
+    border: 1px solid var(--divider-color);
+    margin: 1rem 0;
+}

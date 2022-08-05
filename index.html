@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Github-UserFinder</title>
+	<!--=========================Font Awesome CDN============================-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!--=========================Style CSS============================-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<!--=========================Header Section============================-->
+            <header class="nav_wrapper">
+            	<nav class="nav_container container">
+            		<div class="nav_content">
+            			<div class="logo">
+            			<a href="#home" class="nav_logo"><i class="fa-brands fa-github"></i></a> 
+            			</div>
+            			<div class="nav_intro">
+            			<h2 class="nav_title">Github Search User</h2>
+                        <p class="nav_desc">Browse User Profile via Github API</p>
+            			</div>
+            		</div>
+
+            		<div class="nav_searchbar">
+            			<input type="search" placeholder="Search user e.g KunalNimsatkar" class="searchBar" id="search">
+                        <button class="searchBtn">
+                        <i class="fa-solid fa-arrow-right submitBtn"></i>
+                        </div>
+            		</div>
+            	</nav>
+            </header>
+
+			<section class="notFound container"><h1>User Not Found Please Enter The Correct UserName</h1></section>    
+    <!--=========================Main Section============================-->
+            <main class="wrapper container" id="wrapper">
+    <!--=========================User Section============================-->        	
+	        
+            	<section class="left_wrapper">
+            	<div class="user_container">
+            	</div>
+    <!--=========================Repo Section============================-->
+
+            	<div class="repo_container" id="repo">
+            	    <h2 class="repo_title">Repositiors</h2>
+            	</div>
+            </section>
+    <!--=========================Follower Section============================-->
+            	<section class="right_section">
+            		<div class="right_wrapper" id="right">
+            		<h2 class="follower_title">Followers</h2>
+                    </div>	
+            	</section>
+             </main>
+    <!--=========================Script File============================-->
+    <script src="script.js"></script>
+
+  </body>
+</html>
