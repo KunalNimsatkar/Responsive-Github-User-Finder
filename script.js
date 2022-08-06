@@ -111,7 +111,7 @@ async function showContent(e) {
 
         repoTitle.innerHTML = `${repoData[i].name}`
         repoDesc.innerHTML = `${repoData[i].description}`
-        repoDay.innerHTML = `${repoData[i].updated_at}`;
+        repoDay.innerHTML = ` Last Updated on ${repoData[i].updated_at}`;
         divRepo.setAttribute("href",`${repoData[i].html_url}`)
        	}
 

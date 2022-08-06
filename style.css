@@ -40,6 +40,11 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
+input:-internal-autofill-selected{
+	font-size: 2rem;
+}
+
+
 a{
 	text-decoration: none;
 }
@@ -89,18 +94,27 @@ a{
   display: flex;
   align-items: center;
   background-color: var(--input-bg);
+  justify-content: space-between;
   border-radius: 40px;
 }
 .searchBar{
-  width: 94%;
+  width: 80%;
   height: 8rem;
   background-color: var(--input-bg);
   border-radius: 40px;
   font-size: 2.5rem;
   padding-left: 3rem;
 }
+.searchBar::placeholder{
+	font-family: 'Poppins', sans-serif;
+	font-size: 2.5rem;
+}
+.searchBar:focus{
+	background-color: var(--white-color);
+	font-size: 2.5rem;
+}
 .searchBtn{
-	width: 125px;
+	width: 120px;
 	height: 120px;
 	border-radius: 50%;
 	margin-right: 2rem;
@@ -147,6 +161,9 @@ a{
 	font-size: 3rem;
     color: var(--text-color);
 }
+.user_name h1 {
+	font-weight: 500;
+}
 .user_bio{
 	color: var(--para-color);
 	font-size: 1.5rem
@@ -177,15 +194,21 @@ a{
 	font-size: 4rem;
 	padding-bottom: 5rem;
 	color: var(--text-color);
+	font-weight: 500;
 }
 .repo_name{
 	text-transform: capitalize;
     margin-top: 1rem;
 }
+.repo_name h2{
+	color: var(--text-color);
+	font-weight: 400;
+}
 .repo_desc{
 	font-size: 0.8rem;
     color: var(--para-color);
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }
 .repo_day{
 	display: flex;
@@ -197,4 +220,58 @@ a{
     height: 0px;
     border: 1px solid var(--divider-color);
     margin: 1rem 0;
+}
+
+/*================Followers Section================*/
+
+.right_section{
+	margin: 0 1rem;
+    padding: 3rem 1rem;
+    background-color: var(--container-bg);
+    border-radius: 20px;
+    height: 70vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.25));
+}
+.follower_title{
+	font-size: 4rem;
+	padding-bottom: 5rem;
+	color: var(--text-color);
+	font-weight: 500;
+}
+.follower_area{
+	display: flex;
+	align-content: center;
+	padding: 1rem 1rem;
+}
+.follower_img{
+	width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.follower_content{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem;
+}
+.follower_name{
+	text-transform: capitalize;
+    margin-top: 1rem;
+	color: var(--text-color);
+	font-weight: 400;
+	font-size: 3rem;
+}
+.follower_username{
+	font-size: 2.3rem;
+    color: var(--para-color);
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+.right_section_divider{
+   width: 98%;
+   height: 0px;
+   border: 1px solid var(--divider-color);
+   margin: 1rem 0;	
 }
