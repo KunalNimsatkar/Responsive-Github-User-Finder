@@ -6,7 +6,7 @@
  --header-bg : hsla(0, 24%, 93%, 1);
  --input-bg : hsla(0, 100%, 99%, 1);
  --text-color : hsla(0, 0%, 0%, 1);
- --bg-color : hsla(0, 40%, 83%, 1);
+ --bg-color : hsl(0deg 8% 74%);
  --container-bg : hsla(0, 72%, 95%, 1);
  --repo-text : hsla(227, 57%, 52%, 1);
  --para-color :hsla(0, 12%, 54%, 1);
@@ -18,12 +18,31 @@
  --para-size:0.9rem;
 }
 
-/*================Basic Styling================*/
+/*================Global Styling================*/
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+/*================Custom Scroll ================*/
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--container-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #e5c2c2;
+    border-radius: 10px;
+}
+/*================Basic Styling================*/
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scrollbar-color: #8f54a0 #ffffff;
 }
 body{
 	font-size: 16px;
@@ -36,33 +55,24 @@ button{
 	border: none;
 	outline: none;
 }
+a{
+	text-decoration: none;
+}
+/*================Input CSS ================*/
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
-a{
-	text-decoration: none;
+
+/*================Input Autofill CSS ================*/
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+  -webkit-text-fill-color: var(--para-color) !important;
 }
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #8f54a0 #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: var(--container-bg);
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #e5c2c2;
-    border-radius: 10px;
-  }
 /*================Not Found User ================*/
 .notFound{
 	display: none;
@@ -120,6 +130,7 @@ a{
 .searchBar::placeholder{
 	font-family: 'Poppins', sans-serif;
 	font-size: 0.8rem;
+	background-color: var(--input-bg);
 }
 .searchBar:focus{
 	font-size: 0.8rem;
@@ -143,10 +154,8 @@ a{
 
 .wrapper{
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-}
-.left_wrapper{
-	width: 100%;
 }
 .user_container{
 	margin: 0.5rem;
@@ -246,12 +255,12 @@ a{
 
 /*================Followers Section================*/
 
-.right_section{
-	padding: 0.5rem;
-    margin: 0 0.5rem;
-    background-color: var(--container-bg);
+.right_wrapper{
+	background-color: var(--container-bg);
     border-radius: 20px;
     filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.25));
+    padding: 0.5rem;
+    margin:0 0.5rem;
 }
 .follower_scroll{
     height: 70vh;
@@ -299,6 +308,30 @@ a{
    border: 1px solid var(--divider-color);
    margin: 0.5rem 0;	
 }
+#footer{
+	display: none;
+}
+.footer_section{
+	display: flex;
+    justify-content: space-around;
+    color: var(--white-color);
+    font-size: 0.7rem;
+    font-family: 'Inter';
+    margin-top: 2rem;
+}
+.source_text{
+	text-transform: capitalize;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.source_data{
+	color: var(--white-color);
+}
+.codeBy{
+	color: var(--white-color);
+	text-decoration: underline;
+}
+/*================Media Queries================*/
 
 @media screen and (min-width: 375px){
 	.container{
@@ -325,8 +358,11 @@ a{
 
 @media screen and (min-width: 425px){
 	.container{
-		margin-right:1.5rem;
-		margin-left: 1.5rem;
+		margin-right:1rem;
+		margin-left: 1rem;
+	}
+	.user_area{
+		justify-content: space-around;
 	}
 }
 
@@ -347,6 +383,10 @@ a{
 	.username{
 		font-size: 1.3rem;
 	}
+	.user_area{
+		justify-content: space-around;
+		padding: 1.5rem 2rem;
+	}
 	.user_bio{
 		font-size: .898rem;
 	}
@@ -357,11 +397,10 @@ a{
 		padding-left: 3rem;
 	}
 	.repo_container,
-	.right_section{
+	.right_wrapper{
 		padding: 1.5rem 0.5rem 1.5rem 1.5rem;
 	}
 }
-
 @media screen and (max-width: 968px){
 	.nav_container{
 		flex-direction: column;
@@ -404,13 +443,26 @@ a{
    .user_data{
    	padding: 1.8rem 0 0 0;
    }
-   .repo_container, .right_section {
+   .repo_container{
+   	margin-top: 1rem;
+   	padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+   }
+  .right_wrapper {
     margin-top: 0.5rem;
      padding: 1.5rem 0.5rem 1.5rem 1.5rem;
    }
    .follower_scroll{
-   	height: 100vh;
+   	height: 112vh;
    }
+   .left_wrapper{
+	width: 60%;
+}
+ .right_section{
+	width: 40%;
+ }
+ .footer_section{
+ 	font-size: 1rem;
+ }
 }
 
 @media screen and (min-width: 1200px){
@@ -419,4 +471,7 @@ a{
 		margin-right: auto;
 		margin-left: auto;
 	}
+	.follower_scroll{
+   	height: 105vh;
+   }
 }

@@ -156,5 +156,6 @@ async function showContent(e) {
             followerLinkName.setAttribute("href",`${followData[i].html_url}`)
 
         	}
+          document.getElementById("footer").style.display = "flex";
 	}
 searchBtn.addEventListener('click', showContent);
