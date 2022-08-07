@@ -1,8 +1,8 @@
 const searchBtn = document.querySelector(".searchBtn");
 const showData = document.getElementById('wrapper');
 const notfound = document.querySelector(".notFound");
-const repoContainer = document.querySelector(".repo_container")
-const followerSection = document.querySelector(".right_wrapper");
+const repoScroll = document.querySelector(".repo_scroll")
+const followerScroll = document.querySelector(".follower_scroll");
 const userContainer = document.querySelector(".user_container");
 
 async function showContent(e) {
@@ -107,7 +107,7 @@ async function showContent(e) {
         repo.appendChild(repoContent);
         repoContent.appendChild(repoDay);
         repo.appendChild(divider);
-        repoContainer.appendChild(repo);
+        repoScroll.appendChild(repo);
 
         repoTitle.innerHTML = `${repoData[i].name}`
         repoDesc.innerHTML = `${repoData[i].description}`
@@ -140,14 +140,14 @@ async function showContent(e) {
             followerDivider.classList.add("right_section_divider");
 
 
-            followerSection.appendChild(followerArea);                                                                                           
+            followerScroll.appendChild(followerArea);                                                                                           
             followerArea.appendChild(followerImg);
             followerImg.appendChild(img);
             followerArea.appendChild(followerContent);
             followerContent.appendChild(followerLinkName);
             followerLinkName.appendChild(followerName);
             followerContent.appendChild(followerUsername);
-            followerSection.appendChild(followerDivider);
+            followerScroll.appendChild(followerDivider);
        
             img.src = `${followData[i].avatar_url}`;
             followerName.innerHTML = `${followData[i].login}`;
