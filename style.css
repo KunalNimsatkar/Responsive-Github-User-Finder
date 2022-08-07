@@ -40,13 +40,29 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
-input:-internal-autofill-selected{
-	font-size: 1rem;
-	background-color: var(--white-color);
-}
 a{
 	text-decoration: none;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--container-bg);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #e5c2c2;
+    border-radius: 10px;
+  }
 /*================Not Found User ================*/
 .notFound{
 	display: none;
@@ -96,22 +112,22 @@ a{
 }
 .searchBar{
   width: 80%;
-  height: 8vh;
+  align-items: center;
   background-color: var(--input-bg);
   border-radius: 40px;
   padding-left: 1rem;
 }
 .searchBar::placeholder{
 	font-family: 'Poppins', sans-serif;
-	font-size: 1rem;
+	font-size: 0.8rem;
 }
 .searchBar:focus{
-	background-color: var(--white-color);
-	font-size: 1rem;
+	font-size: 0.8rem;
+	background-color: var(--input-bg);
 }
 .searchBtn{
-	width: 40px;
-	height: 40px;
+	width: 12vw;
+	height: 7vh;
 	border-radius: 50%;
 	margin-right: 0.3rem;
 	font-size: 1.5rem;
@@ -162,9 +178,6 @@ a{
 	font-weight: 500;
 	margin-left: -2px;
 }
-.username{
-	font-size: small;
-}
 .user_bio{
 	display: block;
     color: var(--para-color);
@@ -185,7 +198,6 @@ a{
 }
 
 /*================Repo Section================*/
-
 .repo_container{
     background-color: var(--container-bg);
     border-radius: 20px;
@@ -210,10 +222,10 @@ a{
 	text-transform: capitalize;
 	color: var(--text-color);
 	font-weight: 400;
-	font-size: 1.3rem
+	font-size: 1.1rem
 }
 .repo_desc{
-	font-size: 0.9rem;
+	font-size: 0.8rem;
     color: var(--para-color);
     margin-top: 0.2rem;
     margin-bottom: 0.8rem;
@@ -222,6 +234,7 @@ a{
 	display: flex;
     justify-content: end;
     font-size: 0.6rem;
+    color: #402e2e;
 }
 .divider{
     width: 98%;
@@ -264,17 +277,17 @@ a{
 	display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
 }
 .follower_name{
 	text-transform: capitalize;
     margin-top: 0.5rem;
 	color: var(--text-color);
 	font-weight: 400;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 .follower_username{
-	font-size: 0.9rem;
+	font-size: 0.7rem;
     color: var(--para-color);
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -344,7 +357,7 @@ a{
 	}
 	.repo_container,
 	.right_section{
-		padding:1.5rem;
+		padding: 1.5rem 0.5rem 1.5rem 1.5rem;
 	}
 }
 
@@ -392,7 +405,7 @@ a{
    }
    .repo_container, .right_section {
     margin-top: 0.5rem;
-    padding: 1.5rem;
+     padding: 1.5rem 0.5rem 1.5rem 1.5rem;
    }
    .follower_scroll{
    	height: 100vh;
