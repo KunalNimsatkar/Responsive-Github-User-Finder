@@ -12,7 +12,7 @@ async function showContent(e) {
 	const dataUrl = await fetch(`https://api.github.com/users/${name}`);
 	const profile = await dataUrl.json();
  
-/*======Storing fetch data of folowers & repos=====*/
+/*======Storing fetch data of followers & repos=====*/
 
         let followers = profile.followers_url;
         let repo = profile.repos_url;
